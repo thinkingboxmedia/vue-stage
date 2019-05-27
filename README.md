@@ -2,7 +2,7 @@
 
 A Vue plugin which aims to make complex route-to-route transitions much less complex to manage. It leverages Vue's excellent [transition](https://vuejs.org/v2/guide/transitions.html) system and [router](https://router.vuejs.org/). It Uses Promises to determine animation lifecycle throughout the component tree. 
 
-A simple [demo](https://thinkingboxmedia.github.io/vue-stage/) showcases different components animating together.
+This simple [demo](https://thinkingboxmedia.github.io/vue-stage/) app showcases different components animating together.
 
 ---
 
@@ -122,7 +122,7 @@ Useful if the component needs to perform additional work before or after animati
 
 ## Examples
 
-[DEMO](https://thinkingboxmedia.github.io/vue-stage/) 
+The simple [demo](https://thinkingboxmedia.github.io/vue-stage/) app showcases both JS and CSS animations, and illustrates how a highly nested component can affect view-level lifecycle. 
 
 ### JS 
 
