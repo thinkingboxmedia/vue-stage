@@ -250,6 +250,10 @@ export default {
 
 ## TODOs
 
+### Promises
+- Test browser support
+- Add documentation around Promise polyfill
+
 ### Cancellation
 - Cancel promises so they don't resolve if overridden by an opposite transition
 - Cancel animations and immediately run inverse transition
