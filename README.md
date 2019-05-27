@@ -2,6 +2,8 @@
 
 A Vue plugin which aims to make complex route-to-route transitions much less complex to manage. It leverages Vue's excellent [transition](https://vuejs.org/v2/guide/transitions.html) system and [router](https://router.vuejs.org/). It Uses Promises to determine animation lifecycle throughout the component tree. 
 
+A simple [demo](https://thinkingboxmedia.github.io/vue-stage/) showcases different components animating together.
+
 ---
 
 ## Installation
@@ -119,6 +121,8 @@ Useful if the component needs to perform additional work before or after animati
 ---
 
 ## Examples
+
+[DEMO](https://thinkingboxmedia.github.io/vue-stage/) 
 
 ### JS 
 
