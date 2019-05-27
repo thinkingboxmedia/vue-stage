@@ -1,7 +1,7 @@
 {
-  "name": "npm-module-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for npm modules with ES6 features and syntax",
+  "name": "vue-stage",
+  "version": "0.1.0",
+  "description": "A Vue plugin which aims to make complex route-to-route transitions much less complex to manage.",
   "main": "./lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
@@ -21,21 +21,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flexdinesh/npm-module-boilerplate.git"
+    "url": "git+https://github.com/thinkingboxmedia/vue-stage.git"
   },
   "keywords": [
-    "boilerplate",
-    "npm",
-    "module",
-    "node",
-    "javascript"
+    "Vue",
+    "vuejs",
+    "plugin",
+    "transition",
+    "animation",
+    "router"
   ],
-  "author": "Dinesh Pandiyan <flexdinesh@gmail.com>",
+  "author": "Kelly Milligan <kelly@thinkingbox.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/flexdinesh/npm-module-boilerplate/issues"
+    "url": "https://github.com/thinkingboxmedia/vue-stage/issues"
   },
-  "homepage": "https://github.com/flexdinesh/npm-module-boilerplate#readme",
+  "homepage": "https://github.com/thinkingboxmedia/vue-stage#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
@@ -53,5 +54,8 @@
     "mocha": "^6.1.3",
     "nyc": "^13.3.0",
     "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
   }
 }

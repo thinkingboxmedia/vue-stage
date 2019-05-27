@@ -1,10 +1,9 @@
-const defaultAwesomeFunction = (name) => {
-  const returnStr = `I am the Default Awesome Function, fellow comrade! - ${name}`;
-  return returnStr;
-};
+import Stage from './Stage.vue'
+import plugin from './plugin'
 
-const awesomeFunction = () => 'I am just an Awesome Function';
+export {
+  Stage,
+  plugin
+}
 
-export default defaultAwesomeFunction;
-
-export { awesomeFunction };
+export default plugin

@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": "@vue/standard",
   "env": {
     "mocha": true
   },
