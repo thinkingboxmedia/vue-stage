@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Home from './views/Home.vue'
+import About from './views/About.vue'
+import Contact from './views/Contact.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -10,19 +14,19 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: () => import(/* webpackChunkName: "home" */ './views/Home.vue'),
+      component: Home,
       props: true
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      component: About,
       props: true
     },
     {
       path: '/contact',
       name: 'contact',
-      component: () => import(/* webpackChunkName: "contact" */ './views/Contact.vue'),
+      component: Contact,
       props: true
     }
   ]
