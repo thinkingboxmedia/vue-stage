@@ -1,6 +1,6 @@
 # vue-stage
 
-A Vue plugin which aims to make complex route-to-route transitions much less complex to manage. It leverages Vue's excellent (transition)[https://vuejs.org/v2/guide/transitions.html] system and (router)[https://router.vuejs.org/]. It Uses Promises to determine animation lifecycle throughout the component tree. 
+A Vue plugin which aims to make complex route-to-route transitions much less complex to manage. It leverages Vue's excellent [transition](https://vuejs.org/v2/guide/transitions.html) system and [router](https://router.vuejs.org/). It Uses Promises to determine animation lifecycle throughout the component tree. 
 
 ---
 
@@ -27,7 +27,7 @@ import VueStage from 'vue-stage'
 Vue.use( VueStage )
 ```
 
-The plugin applies new "stage" lifecycle methods and data to each Vue instance in your app via a (Global Mixin)[https://vuejs.org/v2/guide/mixins.html#Global-Mixin].
+The plugin applies new "stage" lifecycle methods and data to each Vue instance in your app via a [Global Mixin](https://vuejs.org/v2/guide/mixins.html#Global-Mixin).
 
 ### Stage component
 
@@ -64,7 +64,7 @@ methods: {
 
 These methods are useful when the App needs to perform tasks when views change, like updating the scroll position. 
 
-The `Stage` component is a simple wrapper around the default `<router-view>`. It acts as the top-level stage lifecycle manager using Vue's (transition JS Hooks)[https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks] and [`<keep-alive>`](https://vuejs.org/v2/api/#keep-alive). This can be easily refactored into your own template if required, see the section below on (extending)[#extending].
+The `Stage` component is a simple wrapper around the default `<router-view>`. It acts as the top-level stage lifecycle manager using Vue's [transition JS Hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks) and [`<keep-alive>`](https://vuejs.org/v2/api/#keep-alive). This can be easily refactored into your own template if required, see the section below on [extending](#extending).
 
 ---
 
@@ -90,7 +90,7 @@ Named methods are automatically called on instances _where they are defined_. Th
 - `stageLeave`: _Particularly important, the parent view will wait for this to resolve before unmounting._
 
 These are the primary animation methods. 
-**They must return a `Promise` if the parent view should wait for their animation to complete** before proceeding. Elements can be directly animated here with GSAP or other libraries (see (JS animation example)[#examples]), or the returned `Promise`'s `resolve()` can be stored for firing later (e.g. if using CSS `transition` or `animation`, see (CSS animation example)[#examples]). 
+**They must return a `Promise` if the parent view should wait for their animation to complete** before proceeding. Elements can be directly animated here with GSAP or other libraries (see [JS animation example](#examples)), or the returned `Promise`'s `resolve()` can be stored for firing later (e.g. if using CSS `transition` or `animation`, see [CSS animation example](#examples)). 
 
 #### Duration
 
@@ -243,7 +243,7 @@ export default {
 }
 ```
 
-- The `<Stage />` relies on Vue's transition system to relay view-level `enter` and `leave` lifecycle events through to the top level `<router-view />` components (main page views). It does so using (transition JS Hooks)[https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks], only calling `done()` once all children have resolved their promises.
+- The `<Stage />` relies on Vue's transition system to relay view-level `enter` and `leave` lifecycle events through to the top level `<router-view />` components (main page views). It does so using [transition JS Hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks), only calling `done()` once all children have resolved their promises.
 - These methods traverse the entire component tree for each top-level view, calling the appropriate lifecycle method on descendants, which then propogate upward their own animation promises. Once all promises for the view's tree are resolved, it completes the animation at the view level. 
 - The `out-in` transition mode is important here, as we need the incoming view to wait for the outgoing view's entire tree to finish animating before performing the view-level mounting operation. 
 - `<keep-alive>` is crititcal here working with CSS transitions. By default Vue imeediately destroys outward transitioning elements, they're ephemeral - only visually changing, and so they are immediately removed from the virtual DOM. This makes toggling a transition with `v-if` or `v-show` impossible, as the component has already been scrapped in memory. Components are kept alive and then manually destroyed once they've finished leaving the stage.
