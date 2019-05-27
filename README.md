@@ -215,7 +215,7 @@ export default {
 
 ## Extending
 
-In cases where using the provided `<Stage />` component is undesireable (i.e. when not using Vue Router), this can be easily factored into your own component. In it's most minimal form `vue-stage` requires this structure:
+In cases where using the provided `<Stage />` component is undesirable (i.e. when not using Vue Router), this can be easily factored into your own component. In it's most minimal form `vue-stage` requires this structure:
 
 ```html
 <template>
@@ -244,9 +244,9 @@ export default {
 ```
 
 - The `<Stage />` relies on Vue's transition system to relay view-level `enter` and `leave` lifecycle events through to the top level `<router-view />` components (main page views). It does so using [transition JS Hooks](https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks), only calling `done()` once all children have resolved their promises.
-- These methods traverse the entire component tree for each top-level view, calling the appropriate lifecycle method on descendants, which then propogate upward their own animation promises. Once all promises for the view's tree are resolved, it completes the animation at the view level. 
+- These methods traverse the entire component tree for each top-level view, calling the appropriate lifecycle method on descendants, which then propagate upward their own animation promises. Once all promises for the view's tree are resolved, it completes the animation at the view level. 
 - The `out-in` transition mode is important here, as we need the incoming view to wait for the outgoing view's entire tree to finish animating before performing the view-level mounting operation. 
-- `<keep-alive>` is crititcal here working with CSS transitions. By default Vue imeediately destroys outward transitioning elements, they're ephemeral - only visually changing, and so they are immediately removed from the virtual DOM. This makes toggling a transition with `v-if` or `v-show` impossible, as the component has already been scrapped in memory. Components are kept alive and then manually destroyed once they've finished leaving the stage.
+- `<keep-alive>` is critical here working with CSS transitions. By default Vue immediately destroys outward transitioning elements, they're ephemeral - only visually changing, and so they are immediately removed from the virtual DOM. This makes toggling a transition with `v-if` or `v-show` impossible, as the component has already been scrapped in memory. Components are kept alive and then manually destroyed once they've finished leaving the stage.
 
 ## TODOs
 
@@ -261,7 +261,7 @@ export default {
 ### Hierarchy timing controls
 - Add `waitForChildren` local component flag:
   - Any component should be able to set this flag locally, causing it to wait for
-    it's descendants' promises to resovle before running it's own `stageLeave()`
+    it's descendants' promises to resolve before running it's own `stageLeave()`
 - Add `waitForParent` local component flag:
   - Any component should be able to set this flag locally, causing it to wait for
     it's parent to finish entering before running it's own `stageEnter()`
