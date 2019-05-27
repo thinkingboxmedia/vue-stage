@@ -6,10 +6,10 @@ A Vue plugin which aims to make complex route-to-route transitions much less com
 
 ## Installation
 
-```
-npm install vue-stage --save
+```shell
+$ npm install vue-stage --save
 or
-yarn add vue-stage
+$ yarn add vue-stage
 ``` 
 
 ---
@@ -96,7 +96,7 @@ These are the primary animation methods.
 
 `stageEnter` and `stageLeave` can alternatively be defined as data props; with a duration in milliseconds as their value. This replaces the method, automatically returning a promise which resolves after the specified duration. 
 
-```
+```javascript
 data() {
   return {
     stageLeave: 2000
