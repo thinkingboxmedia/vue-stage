@@ -32,18 +32,18 @@ export default {
 
     overflow: hidden;
 
-    position: absolute;
-    left: 0;
-    top: 0;
+    /* position: absolute; */
+    /* left: 0; */
+    /* top: 0; */
 
     width: 100%;
     height: 100%;
 
-    padding: 20vh 15vw;
+    padding: 10vw;
 
     display: flex;
     justify-content: space-between;
-    align-content: space-between;
+    /* align-content: space-between; */
     flex-wrap: wrap;
 
   }

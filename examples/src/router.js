@@ -9,7 +9,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  base: 'vue-stage/',
+  base: window.location.hostname === 'localhost' ? process.env.BASE_URL : 'vue-stage/',
   routes: [
     {
       path: '/',

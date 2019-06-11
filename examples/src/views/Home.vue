@@ -45,13 +45,14 @@ export default {
 
   .block {
 
-    position: absolute;
-    left: 20vw;
-    top: 20vh;
+    /* position: absolute; */
+    /* left: 20vw; */
+    /* top: 20vh; */
 
-    width: 60vw;
-    height: 60vh;
-    padding: 10vh 10vw;
+    /* width: 60vw; */
+    /* height: 60vh; */
+    padding: 10vw;
+    margin: 5vw;
 
     background: #202020;
     color: #f8f8f8;
@@ -59,12 +60,6 @@ export default {
     h2 {
 
       font-size: 200%;
-
-    }
-
-    p {
-
-      font-size: 150%;
 
     }
 
