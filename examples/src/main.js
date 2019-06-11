@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import vueStage from 'vue-stage'
+import vueStage from '@/vue-stage'
 Vue.use(vueStage)
 
 Vue.config.productionTip = false
