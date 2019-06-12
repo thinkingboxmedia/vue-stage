@@ -28,13 +28,13 @@ export default {
     }
   },
   methods: {
-    stageLeave () {
-      this.showParagraph = false
-      return new Promise(resolve => { this.onSlideLeaveComplete = resolve })
-    },
     stageEnter () {
       this.$nextTick( () => { this.showParagraph = true } )
       return new Promise(resolve => { this.onSlideEnterComplete = resolve })
+    },
+    stageLeave () {
+      this.showParagraph = false
+      return new Promise(resolve => { this.onSlideLeaveComplete = resolve })
     }
   }
 }

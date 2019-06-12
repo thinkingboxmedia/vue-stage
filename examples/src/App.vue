@@ -25,11 +25,16 @@ export default {
   box-sizing: border-box;
 }
 
-.header {
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
 
+.header {
   position: relative;
   z-index: 1;
-
+  padding: 1rem;
 }
 
 #app {

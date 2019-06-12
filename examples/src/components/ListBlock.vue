@@ -11,7 +11,7 @@
           <li
             v-for="item in items"
             :key="item"
-            v-show="isActiveOnStage"
+            :class="{ active: showList }"
           >
             {{ item }}
           </li>
@@ -32,6 +32,7 @@ export default {
     return {
       onEnterComplete: () => {},
       onLeaveComplete: () => {},
+      showList: false,
       items: [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         'Duis vestibulum consequat porttitor.',
@@ -40,11 +41,13 @@ export default {
     }
   },
   methods: {
-    stageLeave () {
-      return new Promise(resolve => { this.onLeaveComplete = resolve })
-    },
     stageEnter () {
+      this.$nextTick( () => { this.showList = true } )
       return new Promise(resolve => { this.onEnterComplete = resolve })
+    },
+    stageLeave () {
+      this.showList = false
+      return new Promise(resolve => { this.onLeaveComplete = resolve })
     }
   }
 }
@@ -61,6 +64,24 @@ export default {
   li {
 
     margin: 10px 0;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    &:nth-child(2) { transition-delay: 0.02s; }
+    &:nth-child(1) { transition-delay: 0.05s; }
+
+    &.active {
+
+      opacity: 1;
+      transform: translateY(0);
+
+      transition: all 1s 0.65s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+      &:nth-child(2) { transition-delay: 0.70s; }
+      &:nth-child(3) { transition-delay: 0.78s; }
+
+    }
 
   }
 

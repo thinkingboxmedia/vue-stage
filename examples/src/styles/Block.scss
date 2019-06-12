@@ -29,11 +29,11 @@
     &.slide-enter,
     &.slide-leave-to {
 
-      transform: translate( -50vw, 0 );
+      transform: translate( calc( -50vw + -100% ), 0 );
 
       &.right {
 
-        transform: translate( 50vw, 0 );
+        transform: translate( calc( 50vw + 100% ), 0 );
 
       }
 
